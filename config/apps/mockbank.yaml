@@ -1,0 +1,52 @@
+# MockBank app config: authored app/runtime material only (docs/spec.md section 7.1).
+# No capability definitions live here; capability artifacts under capabilities/ are the
+# source of truth and the Catalog is a projection over them.
+#
+# Test override: MOCKBANK_BASE_URL replaces the entry URL and allowlist origin
+# (the pytest mockbank_server fixture sets it to its random-port server).
+
+app: mockbank
+entry_url: http://localhost:8000/
+
+allowlist:
+  origin: http://localhost:8000
+  allowed_routes:
+    - /
+    - /members
+    - /member
+    - /notice
+    - /override
+  denied_routes:
+    - /settings
+
+allowed_actions:
+  - navigate
+  - click
+  - fill
+  - read
+
+risk_rules:
+  - match:
+      role: button
+      name: Close Account
+    effect: irreversible
+    decision: block
+
+business_outcomes:
+  - code: MEMBER_NOT_FOUND
+    when:
+      kind: text_visible
+      text: No member found
+
+recoveries:
+  - code: DISMISS_SYSTEM_NOTICE
+    when:
+      kind: text_visible
+      text: System notice
+    action:
+      kind: click
+    target:
+      locators:
+        - kind: role_name
+          role: button
+          name: Continue

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}MockBank - Settings (fault control){% endblock %}
+{% block heading %}Settings &mdash; fault control (out-of-band test page){% endblock %}
+{% block content %}
+<p>Faults are process-wide server memory, one-shot, and consumed by the next member search POST from any client.
+If both are armed, interstitial is applied first.</p>
+<table class="data" cellpadding="4" cellspacing="0" border="1">
+  <tr><td class="lbl">Fault</td><td class="lbl">Armed</td><td class="lbl">Effect on the next search</td></tr>
+  <tr><td>interstitial</td><td>{{ "yes" if armed.interstitial else "no" }}</td><td>System notice page with a Continue button</td></tr>
+  <tr><td>unknown</td><td>{{ "yes" if armed.unknown else "no" }}</td><td>Supervisor override required page with an Acknowledge button</td></tr>
+</table>
+<p>
+  <form method="post" action="/settings" style="display:inline">
+    <input type="hidden" name="interstitial" value="once">
+    <input type="submit" value="Arm interstitial=once">
+  </form>
+  <form method="post" action="/settings" style="display:inline">
+    <input type="hidden" name="unknown" value="once">
+    <input type="submit" value="Arm unknown=once">
+  </form>
+  <form method="post" action="/settings" style="display:inline">
+    <input type="hidden" name="clear" value="all">
+    <input type="submit" value="Clear all">
+  </form>
+</p>
+{% endblock %}

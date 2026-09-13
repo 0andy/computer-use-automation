@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "revision": 1,
+  "capability_id": "lookup_member_balance",
+  "app": "mockbank",
+  "description": "Look up member balance.",
+  "inputs": {
+    "member_id": {
+      "type": "string",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "outputs": {
+    "savings_balance": {
+      "type": "money",
+      "from_step": "s3",
+      "capture_as": "savings_balance",
+      "sensitive": true
+    }
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "description": "Fill Member ID with {member_id}",
+      "action": {
+        "kind": "fill",
+        "value": {
+          "kind": "parameter",
+          "name": "member_id"
+        }
+      },
+      "target": {
+        "locators": [
+          {
+            "kind": "label",
+            "text": "Member ID"
+          },
+          {
+            "kind": "attr",
+            "attr": "name",
+            "value": "member_id"
+          }
+        ]
+      },
+      "postcondition": {
+        "kind": "value_equals_parameter",
+        "target": {
+          "locators": [
+            {
+              "kind": "label",
+              "text": "Member ID"
+            },
+            {
+              "kind": "attr",
+              "attr": "name",
+              "value": "member_id"
+            }
+          ]
+        },
+        "param": "member_id"
+      }
+    },
+    {
+      "id": "s2",
+      "description": "Click Search",
+      "action": {
+        "kind": "click"
+      },
+      "target": {
+        "locators": [
+          {
+            "kind": "role_name",
+            "role": "button",
+            "name": "Search"
+          }
+        ]
+      },
+      "postcondition": {
+        "kind": "text_visible",
+        "text": "Savings"
+      }
+    },
+    {
+      "id": "s3",
+      "description": "Read Savings balance",
+      "action": {
+        "kind": "read",
+        "capture_as": "savings_balance",
+        "parser": "money"
+      },
+      "target": {
+        "locators": [
+          {
+            "kind": "table_cell",
+            "row_anchor": "Savings",
+            "col_offset": 1
+          }
+        ]
+      },
+      "postcondition": {
+        "kind": "output_present",
+        "name": "savings_balance"
+      }
+    }
+  ],
+  "business_outcomes": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "when": {
+        "kind": "text_visible",
+        "text": "No member found"
+      }
+    }
+  ],
+  "recoveries": [
+    {
+      "code": "DISMISS_SYSTEM_NOTICE",
+      "when": {
+        "kind": "text_visible",
+        "text": "System notice"
+      },
+      "action": {
+        "kind": "click"
+      },
+      "target": {
+        "locators": [
+          {
+            "kind": "role_name",
+            "role": "button",
+            "name": "Continue"
+          }
+        ]
+      }
+    }
+  ],
+  "success": {
+    "kind": "all",
+    "conditions": [
+      {
+        "kind": "text_visible",
+        "text": "Savings"
+      },
+      {
+        "kind": "output_present",
+        "name": "savings_balance"
+      },
+      {
+        "kind": "value_equals_parameter",
+        "target": {
+          "locators": [
+            {
+              "kind": "table_cell",
+              "row_anchor": "Member ID",
+              "col_offset": 1
+            }
+          ]
+        },
+        "param": "member_id"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+.venv/
+.cua-out/
+.env
+.env*
+!.env.example
+__pycache__/
+*.egg-info/
+.pytest_cache/
+CLAUDE.md
+.claude/
+build/
+dist/

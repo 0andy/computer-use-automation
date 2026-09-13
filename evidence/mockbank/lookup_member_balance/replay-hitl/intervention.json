@@ -1,0 +1,38 @@
+[
+  {
+    "app": "mockbank",
+    "attempt": 1,
+    "capability": "lookup_member_balance",
+    "code": "POSTCONDITION_FAILED",
+    "decision": "continue",
+    "expected": {
+      "kind": "text_visible",
+      "text": "Savings"
+    },
+    "human_events": 0,
+    "masked_screenshot": "masked.png",
+    "observed_summary": "url=http://localhost:8000/; frames=[top=http://localhost:8000/, top/main=http://localhost:8000/override]; controls=5; texts=[MockBank Online \u00b7 Member Services | Members | Supervisor override required | This request has been flagged for supervisor review before the member record can be displayed. | Acknowledge]",
+    "owner": "HUMAN",
+    "phase": "after",
+    "step_description": "Click Search",
+    "step_id": "s2"
+  },
+  {
+    "app": "mockbank",
+    "attempt": 2,
+    "capability": "lookup_member_balance",
+    "code": "POSTCONDITION_FAILED",
+    "decision": "continue",
+    "expected": {
+      "kind": "text_visible",
+      "text": "Savings"
+    },
+    "human_events": 3,
+    "masked_screenshot": "masked-2.png",
+    "observed_summary": "url=http://localhost:8000/; frames=[top=http://localhost:8000/, top/main=http://localhost:8000/override]; controls=5; texts=[MockBank Online \u00b7 Member Services | Members | Supervisor override required | This request has been flagged for supervisor review before the member record can be displayed. | Acknowledge]",
+    "owner": "HUMAN",
+    "phase": "after",
+    "step_description": "Click Search",
+    "step_id": "s2"
+  }
+]

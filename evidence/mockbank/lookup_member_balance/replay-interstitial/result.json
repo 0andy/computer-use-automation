@@ -1,0 +1,13 @@
+{
+  "business_outcome": null,
+  "failure": null,
+  "kind": "success",
+  "llm_calls": 0,
+  "outputs": {
+    "savings_balance": {
+      "redacted": true,
+      "type": "money"
+    }
+  },
+  "recovery_count": 1
+}

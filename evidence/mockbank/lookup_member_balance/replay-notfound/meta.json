@@ -1,0 +1,48 @@
+{
+  "app": "mockbank",
+  "business_outcome": "MEMBER_NOT_FOUND",
+  "capability_id": "lookup_member_balance",
+  "constants": {
+    "max_recoveries_per_step": 2,
+    "poll_s": 0.25,
+    "step_timeout_s": 5.0
+  },
+  "description": "Look up member balance.",
+  "elapsed_ms": 769,
+  "failure_code": null,
+  "final_owner": "COMPLETED",
+  "handoff_enabled": true,
+  "handoffs": 0,
+  "headed": true,
+  "human_event_count": 0,
+  "llm_calls": 0,
+  "model": null,
+  "model_call_count": 0,
+  "operator": "ConsoleOperator",
+  "outputs": {
+    "savings_balance": {
+      "sensitive": true,
+      "type": "money"
+    }
+  },
+  "ownership": [
+    {
+      "from": "AUTOMATION",
+      "to": "COMPLETED"
+    }
+  ],
+  "params": {
+    "member_id": {
+      "sensitive": true,
+      "type": "string"
+    }
+  },
+  "recovery_count": 0,
+  "result_kind": "business_outcome",
+  "revision": 1,
+  "steps": [
+    "s1",
+    "s2",
+    "s3"
+  ]
+}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}MockBank - System notice{% endblock %}
+{% block heading %}System notice{% endblock %}
+{% block content %}
+<table cellpadding="4" cellspacing="0" border="0">
+  <tr><td>Scheduled maintenance is in progress. Some member services may respond slowly.</td></tr>
+  <tr><td>
+    <form method="post" action="/member">
+      <input type="hidden" name="member_id" value="{{ member_id }}">
+      <input type="submit" value="Continue">
+    </form>
+  </td></tr>
+</table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}MockBank - Member Detail{% endblock %}
+{% block heading %}Member Detail{% endblock %}
+{% block content %}
+<table class="data" cellpadding="4" cellspacing="0" border="1">
+  <tr><td class="lbl">Member ID</td><td>{{ member_id }}</td></tr>
+  <tr><td class="lbl">Name</td><td>{{ member.name }}</td></tr>
+  <tr><td class="lbl">Status</td><td>{{ member.status }}</td></tr>
+  <tr><td class="lbl">Savings</td><td>{{ member.savings }}</td></tr>
+</table>
+<p>
+  <button type="button">Close Account</button>
+  &nbsp; <a href="/members">New search</a>
+</p>
+{% endblock %}

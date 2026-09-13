@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{% block title %}MockBank{% endblock %}</title>
+<style type="text/css">
+  body { font-family: Verdana, Arial, sans-serif; font-size: 12px; margin: 8px; background: #ffffff; }
+  td.hdr { font-size: 14px; font-weight: bold; border-bottom: 1px solid #999999; }
+  table.data td { border: 1px solid #999999; padding: 4px 8px; }
+  td.lbl { background: #e8e8e8; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table width="100%" cellpadding="4" cellspacing="0" border="0">
+  <tr><td class="hdr">{% block heading %}{% endblock %}</td></tr>
+  <tr><td>{% block content %}{% endblock %}</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{"action": "navigate", "actor": "runtime", "result": "executed", "seq": 1, "url": "http://localhost:8000/"}
+{"actor": "replay", "code": null, "elapsed_ms": 68, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "before", "polls": 1, "recoveries": 0, "seq": 2, "step_id": "s1"}
+{"action": "fill", "actor": "replay", "control": {"frame_path": "top/main", "label": "Member ID", "name": null, "role": "textbox"}, "description": "Fill Member ID with {member_id}", "result": "executed", "seq": 3, "step_id": "s1", "value": {"kind": "parameter", "name": "member_id"}}
+{"actor": "replay", "code": null, "elapsed_ms": 17, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "after", "polls": 1, "recoveries": 0, "seq": 4, "step_id": "s1"}
+{"actor": "replay", "code": null, "elapsed_ms": 45, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "before", "polls": 1, "recoveries": 0, "seq": 5, "step_id": "s2"}
+{"action": "click", "actor": "replay", "control": {"frame_path": "top/main", "label": null, "name": "Search", "role": "button"}, "description": "Click Search", "result": "executed", "seq": 6, "step_id": "s2"}
+{"actor": "replay", "code": "POSTCONDITION_FAILED", "elapsed_ms": 5130, "event": "settle", "in_flight_polls": 0, "outcome": "unresolved", "phase": "after", "polls": 20, "recoveries": 0, "seq": 7, "step_id": "s2"}
+{"actor": "replay", "attempt": 1, "event": "screenshot", "file": "masked.png", "masked_regions": 0, "result": "masked", "seq": 8}
+{"actor": "run_control", "event": "ownership", "from": "AUTOMATION", "reason": "POSTCONDITION_FAILED", "seq": 9, "step_id": "s2", "to": "NEEDS_HUMAN"}
+{"actor": "replay", "attempt": 1, "code": "POSTCONDITION_FAILED", "event": "handoff", "phase": "after", "result": "requested", "seq": 10, "step_id": "s2"}
+{"actor": "run_control", "event": "ownership", "from": "NEEDS_HUMAN", "reason": "POSTCONDITION_FAILED", "seq": 11, "step_id": "s2", "to": "HUMAN"}
+{"actor": "run_control", "event": "ownership", "from": "HUMAN", "reason": "POSTCONDITION_FAILED", "seq": 12, "step_id": "s2", "to": "AUTOMATION"}
+{"actor": "operator", "attempt": 1, "decision": "continue", "event": "decision", "human_events": 0, "seq": 13, "step_id": "s2"}
+{"actor": "replay", "code": "POSTCONDITION_FAILED", "elapsed_ms": 5089, "event": "settle", "in_flight_polls": 0, "outcome": "unresolved", "phase": "after", "polls": 20, "recoveries": 0, "seq": 14, "step_id": "s2"}
+{"actor": "replay", "attempt": 2, "event": "screenshot", "file": "masked-2.png", "masked_regions": 0, "result": "masked", "seq": 15}
+{"actor": "run_control", "event": "ownership", "from": "AUTOMATION", "reason": "POSTCONDITION_FAILED", "seq": 16, "step_id": "s2", "to": "NEEDS_HUMAN"}
+{"actor": "replay", "attempt": 2, "code": "POSTCONDITION_FAILED", "event": "handoff", "phase": "after", "result": "requested", "seq": 17, "step_id": "s2"}
+{"actor": "run_control", "event": "ownership", "from": "NEEDS_HUMAN", "reason": "POSTCONDITION_FAILED", "seq": 18, "step_id": "s2", "to": "HUMAN"}
+{"actor": "run_control", "event": "ownership", "from": "HUMAN", "reason": "POSTCONDITION_FAILED", "seq": 19, "step_id": "s2", "to": "AUTOMATION"}
+{"actor": "operator", "attempt": 2, "decision": "continue", "event": "decision", "human_events": 3, "seq": 20, "step_id": "s2"}
+{"actor": "replay", "code": null, "elapsed_ms": 14, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "after", "polls": 1, "recoveries": 0, "seq": 21, "step_id": "s2"}
+{"actor": "replay", "code": null, "elapsed_ms": 16, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "before", "polls": 1, "recoveries": 0, "seq": 22, "step_id": "s3"}
+{"action": "read", "actor": "replay", "capture_as": "savings_balance", "control": {"frame_path": "top/main", "label": null, "name": "[REDACTED:savings_balance]", "role": "cell"}, "description": "Read Savings balance", "output_captured": true, "parser": "money", "redacted": true, "result": "executed", "seq": 23, "step_id": "s3", "value": null}
+{"actor": "replay", "code": null, "elapsed_ms": 14, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "after", "polls": 1, "recoveries": 0, "seq": 24, "step_id": "s3"}
+{"actor": "replay", "code": null, "elapsed_ms": 14, "event": "settle", "in_flight_polls": 0, "outcome": "advance", "phase": "final", "polls": 1, "recoveries": 0, "seq": 25, "step_id": null}
+{"actor": "run_control", "event": "ownership", "from": "AUTOMATION", "reason": "success", "seq": 26, "step_id": null, "to": "COMPLETED"}
+{"actor": "replay", "business_outcome": null, "escalation": null, "event": "result", "failure_code": null, "handoffs": 2, "kind": "success", "llm_calls": 0, "recovery_count": 0, "seq": 27}

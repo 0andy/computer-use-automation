@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}MockBank - Members{% endblock %}
+{% block heading %}Members{% endblock %}
+{% block content %}
+<form method="post" action="/member">
+<table cellpadding="4" cellspacing="0" border="0">
+  <tr>
+    <td class="lbl">Member ID</td>
+    <td><input type="text" name="member_id" size="16" maxlength="16" autocomplete="off"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" value="Search"></td>
+  </tr>
+</table>
+</form>
+<p>Enter a Member ID and press Search to open the member record.</p>
+{% endblock %}

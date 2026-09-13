@@ -1,0 +1,8 @@
+{
+  "business_outcome": "MEMBER_NOT_FOUND",
+  "failure": null,
+  "kind": "business_outcome",
+  "llm_calls": 0,
+  "outputs": {},
+  "recovery_count": 0
+}

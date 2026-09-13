@@ -1,0 +1,62 @@
+{
+  "app": "mockbank",
+  "capability_id": "lookup_member_balance",
+  "elapsed_ms": 10716,
+  "executed_actions": 3,
+  "give_up_code": null,
+  "goal": "Look up the member identified by {member_id} and read the current savings balance",
+  "max_steps": 12,
+  "message_ids": [
+    "msg_011CeykiPeYVW4SYZDLXsXoi",
+    "msg_011CeykiaMxsnGxDHLunQmCb",
+    "msg_011CeykikRx9NgsgUUJYcyM5",
+    "msg_011CeykiyK6P2ahuXgV9udSn"
+  ],
+  "model": "claude-sonnet-4-6",
+  "model_call_count": 4,
+  "model_calls": [
+    {
+      "input_tokens": 1851,
+      "message_id": "msg_011CeykiPeYVW4SYZDLXsXoi",
+      "model": "claude-sonnet-4-6",
+      "output_tokens": 114
+    },
+    {
+      "input_tokens": 2267,
+      "message_id": "msg_011CeykiaMxsnGxDHLunQmCb",
+      "model": "claude-sonnet-4-6",
+      "output_tokens": 103
+    },
+    {
+      "input_tokens": 2794,
+      "message_id": "msg_011CeykikRx9NgsgUUJYcyM5",
+      "model": "claude-sonnet-4-6",
+      "output_tokens": 128
+    },
+    {
+      "input_tokens": 3359,
+      "message_id": "msg_011CeykiyK6P2ahuXgV9udSn",
+      "model": "claude-sonnet-4-6",
+      "output_tokens": 80
+    }
+  ],
+  "outputs": {
+    "savings_balance": {
+      "parser": "money"
+    }
+  },
+  "params": {
+    "member_id": {
+      "sensitive": true,
+      "type": "string"
+    }
+  },
+  "rounds": 4,
+  "stop_detail": "Member record found and savings balance successfully captured.",
+  "stop_reason": "goal_completed",
+  "timeout_s": 60.0,
+  "usage": {
+    "input_tokens": 10271,
+    "output_tokens": 425
+  }
+}

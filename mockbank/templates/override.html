@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}MockBank - Supervisor override required{% endblock %}
+{% block heading %}Supervisor override required{% endblock %}
+{% block content %}
+<table cellpadding="4" cellspacing="0" border="0">
+  <tr><td>This request has been flagged for supervisor review before the member record can be displayed.</td></tr>
+  <tr><td>
+    <form method="post" action="/member">
+      <input type="hidden" name="member_id" value="{{ member_id }}">
+      <button type="submit">Acknowledge</button>
+    </form>
+  </td></tr>
+</table>
+{% endblock %}
